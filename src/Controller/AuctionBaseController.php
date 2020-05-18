@@ -13,7 +13,7 @@ class AuctionBaseController extends AppController
     {
         parent::initialize();
         // 必要なコンポーネントのロード
-        $this->loadComponent('RequestHanler');
+        $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
         $this->loadComponent('Auth', [
             'authorize' => ['Controller'],
