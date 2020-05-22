@@ -8,5 +8,5 @@
         echo $this->Form->control('price');
     ?>
 </fieldset>
-<?= $this->Fomr->button(__('Submit')) ?>
-<?= $this->Fomr->end() ?>
+<?= $this->Form->button(__('Submit')) ?>
+<?= $this->Form->end() ?>

@@ -4,8 +4,8 @@
 <thead>
     <tr>
         <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-        <th class="main" scope="col"><?= $this->Paginator->sort('name') ?></th>
-        <th scope="col"><?= $this->Paginator->sort('created') ?></th>
+        <th class="main" scope="col"><?= $this->Paginator->sort('name',['label' => '商品名']) ?></th>
+        <th scope="col"><?= $this->Paginator->sort('created', ['laber' => '出品日時']) ?></th>
         <th scope="col" class="actions"><?= __('Actions') ?></th>
     </tr>
 </thead>
@@ -17,7 +17,7 @@
         <td><?= h($biditem->created) ?></td>
         <td class="actions">
             <?php if(!empty($biditem->bidinfo)): ?>
-            <?= $this->Html->link(__('View'), ['action' => 'msg', $biditem->bidinfo->id]) ?>
+            <?= $this->Html->link(__('詳細'), ['action' => 'msg', $biditem->bidinfo->id]) ?>
             <?php endif; ?>
         </td>
     </tr>

@@ -6,18 +6,18 @@
     </tr>
     <tr>
         <th scope="row">商品名</th>
-        <td><?= $h($biditem->name) ?></td>
+        <td><?= h($biditem->name) ?></td>
     </tr>
     <tr>
         <th scope="row">商品ID</th>
         <td><?= $this->Number->format($biditem->id) ?></td>
     </tr>
     <tr>
-        <th scope="row">終了時間</th>
+        <th scope="row">期限</th>
         <td><?= h($biditem->endtime) ?></td>
     </tr>
     <tr>
-        <th scope="row">投稿時間</th>
+        <th scope="row">出品日時</th>
         <td><?= h($biditem->created) ?></td>
     </tr>
     <tr>
@@ -35,7 +35,7 @@
                 <th scope="col">落札日時</th>
             </tr>
             <tr>
-                <td><?= h($biditem->bidinfo->user->username) ?></td>
+                <td><?= h($biditem->user->username) ?></td>
                 <td><?= h($biditem->bidinfo->price) ?>円</td>
                 <td><?= h($biditem->endtime) ?></td>
             </tr>

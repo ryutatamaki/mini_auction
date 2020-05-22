@@ -40,14 +40,14 @@ class AuctionController extends AuctionBaseController
     // 商品情報の表示
     public function view($id = null) {
         // $idのBiditemを取得
-        $biditem = $this->Biditem->get($id, [
+        $biditem = $this->Biditems->get($id, [
             'contain' => ['Users', 'Bidinfo', 'Bidinfo.Users']
         ]);
         // オークション終了時の処理
         if($biditem->endtime < new \DateTime('now') && $biditem->finished == 0) {
             // finishedを1に変更して保存
             $biditem->finished = 1;
-            $this->bidtime->save($biditem);
+            $this->Biditems->save($biditem);
             // Bidinfoを作成する
             $bidinfo = $this->Bidinfo->newEntity();
             // Bidinfoのbiditem_idに$idを設定
