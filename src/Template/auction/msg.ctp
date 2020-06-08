@@ -1,4 +1,4 @@
-<?php if(!empty($bidfinfo)):?>
+<?php if(!empty($bidinfo)):?>
 <h2>商品「<?= $bidinfo->biditem->name ?>」</h2>
 <h3>※メッセージ情報</h3>
 <h6>※メッセージを送信する</h6>
@@ -20,7 +20,7 @@
 <?php if(!empty($bidmsgs)): ?>
     <?php foreach($bidmsgs as $msg): ?>
     <tr>
-        <td><?= h($msg->username) ?></td>
+        <td><?= h($msg->user->username) ?></td>
         <td><?= h($msg->message) ?></td>
         <td><?= h($msg->created) ?></td>
     </tr>

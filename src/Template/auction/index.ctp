@@ -14,7 +14,7 @@
         <tr>
             <td><?= h($biditem->name) ?></td>
             <td><?= h($biditem->finished ? '終了' : '') ?></td>
-            <td><?= h($biditem->endtime) ?></td>
+            <td><?= h($biditem->endtime->year . '-' . (strlen($biditem->endtime->month) == 1 ? 0 . $biditem->endtime->month : $biditem->endtime->month) . '-' . (strlen($biditem->endtime->day) == 1 ? 0 . $biditem->endtime->day : $biditem->endtime->day) . ' ' . (strlen($biditem->endtime->hour) == 1 ? 0 . $biditem->endtime->hour : $biditem->endtime->hour) . ':' . (strlen($biditem->endtime->minute) == 1 ? 0 . $biditem->endtime->minute : $biditem->endtime->minute)) ?></td>
             <td class="actions">
                 <?= $this->Html->link(__('詳細'), ['action' => 'View', $biditem->id]) ?>
             </td>

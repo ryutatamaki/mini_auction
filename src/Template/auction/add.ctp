@@ -6,7 +6,7 @@
         echo $this->Form->hidden('user_id', ['value' => $authuser['id']]);
         echo '<p><strong>出品者: ' . $authuser['username'] . '</strong></p>';
         echo $this->Form->control('name', ['label' => '商品名']);
-        echo $this->Form->control('finished', ['label' => '終了', 'value' => 0]);
+        echo $this->Form->hidden('finished', ['value' => 0]);
         echo $this->Form->control('endtime', [
             'type' => 'datetime',
             'label' => '期限',

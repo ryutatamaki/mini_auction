@@ -14,7 +14,7 @@
         <tr>
             <td><?= h($info->id) ?></td>
             <td><?= h($info->biditem->name) ?></td>
-            <td><?= h($info->created) ?></td>
+            <td><?= h($info->biditem->created->year .'-' . (strlen($info->biditem->created->month) == 1 ? 0 . $info->biditem->created->month : $info->biditem->created->month) . '-' . (strlen($info->biditem->created->day) == 1 ? 0 . $info->biditem->created->day : $info->biditem->created->day) . ' ' . (strlen($info->biditem->created->hour) == 1 ? 0 . $info->biditem->created->hour : $info->biditem->created->hour) . ':' . (strlen($info->biditem->created->minute) == 1 ? 0 . $info->biditem->created->minute : $info->biditem->created->minute)) ?></td>
             <td class="actions"><?= $this->Html->link(__('View'), ['action' => 'msg', $info->id]) ?></td>
         </tr>
     <?php endforeach; ?>

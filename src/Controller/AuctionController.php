@@ -130,7 +130,7 @@ class AuctionController extends AuctionBaseController
     }
 
     // 落札者とのメッセージ
-    public function msg($bidinco_id = null) {
+    public function msg($bidinfo_id = null) {
         // Bidmessageを新たに用意
         $bidmsg = $this->Bidmessages->newEntity();
         // POST送信時の処理
@@ -155,7 +155,7 @@ class AuctionController extends AuctionBaseController
         // Bidmessageを$bidinfo_idとuser_idで検索
         $bidmsgs = $this->Bidmessages->find('all', [
             'conditions' => ['bidinfo_id' => $bidinfo_id],
-            'cantain' => ['Users'],
+            'contain' => ['Users'],
             'order' => ['created' => 'desc']
         ]);
         $this->set(compact('bidmsgs', 'bidinfo', 'bidmsg'));

@@ -14,7 +14,7 @@
     <tr>
         <td><?= h($biditem->id) ?></td>
         <td><?= h($biditem->name) ?></td>
-        <td><?= h($biditem->created) ?></td>
+        <td><?= h($biditem->created->year .'-' . (strlen($biditem->created->month) == 1 ? 0 . $biditem->created->month : $biditem->created->month) . '-' . (strlen($biditem->created->day) == 1 ? 0 . $biditem->created->day : $biditem->created->day) . ' ' . (strlen($biditem->created->hour) == 1 ? 0 . $biditem->created->hour : $biditem->created->hour) . ':' . (strlen($biditem->created->minute) == 1 ? 0 . $biditem->created->minute : $biditem->created->minute)) ?></td>
         <td class="actions">
             <?php if(!empty($biditem->bidinfo)): ?>
             <?= $this->Html->link(__('詳細'), ['action' => 'msg', $biditem->bidinfo->id]) ?>

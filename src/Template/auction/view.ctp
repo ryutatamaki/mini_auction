@@ -46,7 +46,7 @@
 </div>
 <div class="related">
     <h4><?= __('入札情報') ?></h4>
-    <?php if(!empty($biditem->finished)): ?>
+    <?php if(!$biditem->finished): ?>
         <h6><a href="<?= $this->Url->build(['action' => 'bid', $biditem->id]) ?>"> 《入札する！》</a></h6>
     <?php if(!empty($bidrequests)): ?>
         <table cellpadding="0" cellspacing="0">
